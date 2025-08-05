@@ -1,0 +1,275 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --accent-color: #6366f1;
+  --danger-color: #ef4444;
+  --success-color: #16a34a;
+  --border-color: #334155;
+
+  --btn-cancelar-bg: #4b5563;
+  --btn-cancelar-hover: #374151;
+  --btn-confirmar-hover: #22c55e;
+  --btn-eliminar-hover: #c62828;
+  --btn-calcular-bg: #3b82f6;
+  --btn-calcular-hover: #2563eb;
+  --input-text-color: #1e293b;
+  --input-border: #cbd5e1;
+  --modal-bg: rgba(30, 41, 59, 0.699);
+  --modal-border: rgba(255, 255, 255, 0.1);
+
+  --font: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1{
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.7rem, 3vw, 3.3rem);
+  text-align: center;
+  color: var(--text-color);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botones-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 0.75rem 0.3rem;
+  align-items: center;
+  justify-content: flex-start; 
+}
+
+.botones-container > button {
+  flex-shrink: 1;
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+button:not(.btn-close):not(.btn-confirmar):not(.btn-eliminar):not(.btn-calcular),
+.btn:not(.btn-close):not(.btn-confirmar):not(.btn-eliminar):not(.btn-calcular) {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+button:not(.btn-close), .btn:not(.btn-close) {
+  border: none;
+  border-radius: 999px;       
+  padding: 0.6rem 1.4rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  flex-shrink: 1;  
+  min-width: 130px;
+  white-space: nowrap;
+}
+
+button:not(.btn-close):not(.btn-cancelar):not(.btn-confirmar):not(.btn-eliminar):not(.btn-calcular):hover,
+.btn:not(.btn-close):not(.btn-cancelar):not(.btn-confirmar):not(.btn-eliminar):not(.btn-calcular):hover {
+  background-color: var(--accent-color); /* violeta */
+  transform: translateY(-1px) scale(1.03);
+  color: var(--text-color);
+}
+
+
+.btn-confirmar {
+  background-color: var(--success-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirmar:hover {
+  background-color: var(--btn-confirmar-hover);
+  transform: translateY(-1px) scale(1.03);
+  color: var(--text-color);
+}
+
+.btn-cancelar {
+  background-color: var(--btn-calcular-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background-color: var( --btn-cancelar-hover);
+  transform: translateY(-1px) scale(1.03);
+  color: var(--text-color);
+}
+
+.btn-eliminar {
+  background-color: var(--danger-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: var(--btn-eliminar-hover);
+  transform: translateY(-1px) scale(1.03);
+  color: var(--text-color);
+}
+
+.btn-calcular {
+  background-color: var(--btn-calcular-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-calcular:hover {
+  background-color: var(--btn-calcular-hover);
+  transform: translateY(-1px) scale(1.03);
+  color: var(--text-color);
+}
+
+.btn-close:hover {
+  background-color: transparent;
+  transform: translateY(-1px) scale(1.03);
+}
+
+body, button, .btn, .form-control, .form-select, .card, .modal-content {
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--modal-border);
+  border-radius: 1rem;
+  color: var(--text-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--modal-border);
+}
+
+.modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--modal-border);
+}
+
+.modal.fade .modal-dialog {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+input[type="text"],
+input[type="number"],
+select.form-select {
+  border-radius: 0.75rem;
+  border: 1px solid var(--input-border);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  width: 100%;
+  background-color: var(--text-color);
+  color: var(--input-text-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+#resultadoCamino {
+  background-color: #6366f14a;
+  border-left: 5px solid var(--accent-color);
+  border-right: 5px solid var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+
+#resultadoCamino p {
+  margin: 0.3rem 0;
+}
+
+#resultadoCamino strong {
+  color: #ffffffb6;
+}
+
+.toast.toast-custom {
+  color: var(--text-color);
+  border-left: 4px solid;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  width: 700px;
+  max-width: 700px;
+}
+
+.toast-info {
+  background-color: var(--accent-color);
+  border-left-color: var(--accent-color);
+}
+
+.toast-error {
+  background-color: var(--danger-color);
+  border-left-color: var(--danger-color);
+}
+
+.toast-exito {
+  background-color: var(--success-color);
+  border-left-color: var(--success-color);
+}
