@@ -68,7 +68,7 @@ export class Grafo {
   }
 
   estaVacio() {
-    return this.cantidadVertices() === 0;
+    return this.cantidadVertices() === 0 && this.proximoId === 1;
   }
 
   vaciar(){

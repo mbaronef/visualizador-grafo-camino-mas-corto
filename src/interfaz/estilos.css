@@ -206,13 +206,46 @@ input[type="number"],
 select.form-select {
   border-radius: 0.75rem;
   border: 1px solid var(--input-border);
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
   font-size: 0.95rem;
   width: 100%;
   background-color: var(--text-color);
   color: var(--input-text-color);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: auto;
+  height: auto;
+  line-height: 1.4;
+  box-sizing: border-box;
+  resize: none;
+  overflow: hidden;
+}
+
+input[type="number"] {
+  height: 2.5rem;
+}
+
+input[type="text"] {
+  min-height: 3rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.7;
+  word-wrap: break-word;
+  white-space: normal;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75rem;
+  right: 0.75rem;
+  pointer-events: none;
 }
 
 input[type="text"]:focus,
@@ -255,7 +288,7 @@ select.form-select:focus {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  width: 700px;
+  width: min(700px, 90vw);
   max-width: 700px;
 }
 

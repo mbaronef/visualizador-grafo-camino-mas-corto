@@ -38,11 +38,8 @@ export function inicializarEventoAgregarArista(grafo, manejadorGrafoVis) {
   confirmarPesoBtn.addEventListener("click", () => {
     const peso = parseFloat(pesoInput.value);
     
-    if (isNaN(peso)) {
-      mostrarError("Ingresá un peso válido");
-      return;
-    }
-    
+    if (!validarPesoArista(peso)) return;
+   
     try{
       grafo.agregarArista(nodoOrigen, nodoDestino, peso);
       manejadorGrafoVis.agregarArista({ from: nodoOrigen, to: nodoDestino, label: peso.toString() });
@@ -99,6 +96,18 @@ function validarNodoDestino(grafo, nodoOrigen, nodoDestino) {
   } 
   if(grafo.aristaExiste(nodoOrigen, nodoDestino)) {
     mostrarError("La arista ya existe. Seleccioná un nodo diferente.");
+    return false;
+  }
+  return true;
+}
+
+function validarPesoArista(peso) {
+  if (isNaN(peso) || peso < 0 || !isFinite(peso)) {
+    mostrarError("Ingresá un peso válido (número finito y positivo)");
+    return false;
+  }
+  if (peso > 1000000000) {
+    mostrarError("El peso es demasiado grande. Máximo permitido: 1000000000");
     return false;
   }
   return true;

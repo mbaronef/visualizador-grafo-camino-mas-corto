@@ -8,7 +8,7 @@ function crearToast(mensaje, tipo = 'info') {
   divToast.setAttribute('aria-atomic', 'true');
 
   divToast.innerHTML = `
-    <div class="d-flex">
+    <div class="d-flex w-100">
       <div class="toast-body">${mensaje}</div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
     </div>
