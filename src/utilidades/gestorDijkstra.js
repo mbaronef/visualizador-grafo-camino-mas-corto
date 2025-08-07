@@ -3,19 +3,13 @@ import { ColaPrioridad } from '../dominio/colaPrioridad.js';
 export class GestorDijkstra {
   constructor(grafo) {
     this.grafo = grafo;
-    this.ultimoOrigen = null;
     this.costos = null;
     this.vengoDe = null;
   }
 
   calcularCaminoMasCorto(idOrigen, idDestino) {
-    const hayQueRecalcular = this.ultimoOrigen !== idOrigen || !this.costos || !this.vengoDe;
-
-    if (hayQueRecalcular) {
-      this.#dijkstra(idOrigen);
-      this.ultimoOrigen = idOrigen;
-    }
-
+    this.#dijkstra(idOrigen);
+    
     let camino = this.#reconstruirCamino(idOrigen, idDestino);
     let costo = this.costos.get(idDestino);
     return { camino, costo };
